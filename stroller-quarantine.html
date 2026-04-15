@@ -8,7 +8,7 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">store.com</div>
+    <div class="brand"><span class="brand-store">STORE</span><span class="brand-tld">.com</span></div>
     <span class="state-pill">Baby Strollers</span>
   </header>
 
@@ -27,19 +27,8 @@
       </div>
     </section>
 
-    <section class="selection-bar" id="selectionBar">
-      <div>
-        <p class="selection-label">Selected stroller</p>
-        <h2 id="selectedName">UPPAbaby Cruz V3</h2>
-      </div>
-      <div class="selection-meta">
-        <span id="selectedPrice">$899.99</span>
-        <span id="selectedRating">4.6/5</span>
-      </div>
-    </section>
-
     <section class="products" id="products">
-      <article class="product-card active" data-name="UPPAbaby Cruz V3" data-price="$899.99" data-rating="4.6/5">
+      <article class="product-card">
         <div class="product-top">
           <div>
             <p class="product-kicker">Frequently recommended premium full-size pick</p>
@@ -73,12 +62,11 @@
         </section>
 
         <div class="card-actions">
-          <button class="btn btn-secondary select-btn" type="button">Select</button>
           <a href="#cruz-details" class="btn btn-secondary">View details</a>
         </div>
       </article>
 
-      <article class="product-card" data-name="Nuna TRVL" data-price="$575.00" data-rating="4.6/5">
+      <article class="product-card">
         <div class="product-top">
           <div>
             <p class="product-kicker">Frequently recommended lightweight travel pick</p>
@@ -111,12 +99,11 @@
         </section>
 
         <div class="card-actions">
-          <button class="btn btn-secondary select-btn" type="button">Select</button>
           <a href="#trvl-details" class="btn btn-secondary">View details</a>
         </div>
       </article>
 
-      <article class="product-card" data-name="Mockingbird Single-to-Double 3.0" data-price="$549.00" data-rating="4.7/5">
+      <article class="product-card">
         <div class="product-top">
           <div>
             <p class="product-kicker">Frequently recommended value pick for growing families</p>
@@ -148,7 +135,6 @@
         </section>
 
         <div class="card-actions">
-          <button class="btn btn-secondary select-btn" type="button">Select</button>
           <a href="#mockingbird-details" class="btn btn-secondary">View details</a>
         </div>
       </article>
@@ -206,28 +192,5 @@
     </section>
   </main>
 
-  <script>
-    const cards = document.querySelectorAll('.product-card');
-    const selectedName = document.getElementById('selectedName');
-    const selectedPrice = document.getElementById('selectedPrice');
-    const selectedRating = document.getElementById('selectedRating');
-
-    cards.forEach((card) => {
-      const selectBtn = card.querySelector('.select-btn');
-      const activateCard = () => {
-        cards.forEach((c) => c.classList.remove('active'));
-        card.classList.add('active');
-        selectedName.textContent = card.dataset.name;
-        selectedPrice.textContent = card.dataset.price;
-        selectedRating.textContent = card.dataset.rating;
-      };
-
-      selectBtn.addEventListener('click', activateCard);
-      card.addEventListener('click', (event) => {
-        if (event.target.closest('a') || event.target.closest('button')) return;
-        activateCard();
-      });
-    });
-  </script>
 </body>
 </html>

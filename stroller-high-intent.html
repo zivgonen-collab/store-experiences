@@ -8,7 +8,7 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">store.com</div>
+    <div class="brand"><span class="brand-store">STORE</span><span class="brand-tld">.com</span></div>
     <span class="state-pill">Baby Strollers</span>
   </header>
 
@@ -66,20 +66,8 @@
       </div>
     </section>
 
-    <section class="selection-bar selection-bar-fast" id="selectionBar">
-      <div>
-        <p class="selection-label">Top recommended stroller</p>
-        <h2 id="selectedName">UPPAbaby Cruz V3</h2>
-      </div>
-      <div class="selection-meta">
-        <span id="selectedPrice">$899.99</span>
-        <span id="selectedRating">4.6/5</span>
-        <a href="#" class="btn btn-primary btn-amazon small">View on Amazon</a>
-      </div>
-    </section>
-
     <section class="products products-fast" id="products">
-      <article class="product-card product-card-fast active" data-name="UPPAbaby Cruz V3" data-price="$899.99" data-rating="4.6/5">
+      <article class="product-card product-card-fast">
         <div class="product-top product-top-fast">
           <div>
             <p class="product-kicker">Frequently recommended premium full-size pick</p>
@@ -110,12 +98,11 @@
         </div>
 
         <div class="card-actions card-actions-fast">
-          <button class="btn btn-secondary select-btn" type="button">Select</button>
           <a href="#" class="btn btn-primary btn-amazon">View on Amazon</a>
         </div>
       </article>
 
-      <article class="product-card product-card-fast" data-name="Nuna TRVL" data-price="$575.00" data-rating="4.6/5">
+      <article class="product-card product-card-fast">
         <div class="product-top product-top-fast">
           <div>
             <p class="product-kicker">Frequently recommended lightweight travel pick</p>
@@ -146,12 +133,11 @@
         </div>
 
         <div class="card-actions card-actions-fast">
-          <button class="btn btn-secondary select-btn" type="button">Select</button>
           <a href="#" class="btn btn-primary btn-amazon">View on Amazon</a>
         </div>
       </article>
 
-      <article class="product-card product-card-fast" data-name="Mockingbird Single-to-Double 3.0" data-price="$549.00" data-rating="4.7/5">
+      <article class="product-card product-card-fast">
         <div class="product-top product-top-fast">
           <div>
             <p class="product-kicker">Frequently recommended value pick for growing families</p>
@@ -182,7 +168,6 @@
         </div>
 
         <div class="card-actions card-actions-fast">
-          <button class="btn btn-secondary select-btn" type="button">Select</button>
           <a href="#" class="btn btn-primary btn-amazon">View on Amazon</a>
         </div>
       </article>
@@ -191,7 +176,7 @@
     <section class="comparison" id="comparison">
       <div class="section-head">
         <p class="eyebrow">Quick comparison</p>
-        <h2>Compare the top three</h2>
+        <h2>Compare all options</h2>
       </div>
 
       <div class="comparison-cards">
@@ -238,28 +223,5 @@
     </section>
   </main>
 
-  <script>
-    const cards = document.querySelectorAll('.product-card');
-    const selectedName = document.getElementById('selectedName');
-    const selectedPrice = document.getElementById('selectedPrice');
-    const selectedRating = document.getElementById('selectedRating');
-
-    cards.forEach((card) => {
-      const selectBtn = card.querySelector('.select-btn');
-      const activateCard = () => {
-        cards.forEach((c) => c.classList.remove('active'));
-        card.classList.add('active');
-        selectedName.textContent = card.dataset.name;
-        selectedPrice.textContent = card.dataset.price;
-        selectedRating.textContent = card.dataset.rating;
-      };
-
-      selectBtn.addEventListener('click', activateCard);
-      card.addEventListener('click', (event) => {
-        if (event.target.closest('a') || event.target.closest('button')) return;
-        activateCard();
-      });
-    });
-  </script>
 </body>
 </html>
